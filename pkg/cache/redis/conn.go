@@ -27,7 +27,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/stat"
+	"github.com/ryanli-me/kratos/pkg/stat"
 
 	"github.com/pkg/errors"
 )

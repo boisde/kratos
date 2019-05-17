@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/ecode"
-	"github.com/bilibili/kratos/pkg/log"
-	"github.com/bilibili/kratos/pkg/net/metadata"
+	"github.com/ryanli-me/kratos/pkg/ecode"
+	"github.com/ryanli-me/kratos/pkg/log"
+	"github.com/ryanli-me/kratos/pkg/net/metadata"
 )
 
 // Logger is logger  middleware

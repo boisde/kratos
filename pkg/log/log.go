@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/bilibili/kratos/pkg/conf/env"
+	"github.com/ryanli-me/kratos/pkg/conf/env"
 )
 
 // Config log config.

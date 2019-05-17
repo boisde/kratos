@@ -13,12 +13,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/conf/env"
-	"github.com/bilibili/kratos/pkg/ecode"
-	"github.com/bilibili/kratos/pkg/log"
-	"github.com/bilibili/kratos/pkg/naming"
-	http "github.com/bilibili/kratos/pkg/net/http/blademaster"
-	xtime "github.com/bilibili/kratos/pkg/time"
+	"github.com/ryanli-me/kratos/pkg/conf/env"
+	"github.com/ryanli-me/kratos/pkg/ecode"
+	"github.com/ryanli-me/kratos/pkg/log"
+	"github.com/ryanli-me/kratos/pkg/naming"
+	http "github.com/ryanli-me/kratos/pkg/net/http/blademaster"
+	xtime "github.com/ryanli-me/kratos/pkg/time"
 )
 
 const (

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/log"
+	"github.com/ryanli-me/kratos/pkg/log"
 )
 
 func Test_logFn(t *testing.T) {

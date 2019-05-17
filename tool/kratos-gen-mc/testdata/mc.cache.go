@@ -46,9 +46,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/bilibili/kratos/pkg/cache/memcache"
-	"github.com/bilibili/kratos/pkg/log"
-	"github.com/bilibili/kratos/pkg/stat/prom"
+	"github.com/ryanli-me/kratos/pkg/cache/memcache"
+	"github.com/ryanli-me/kratos/pkg/log"
+	"github.com/ryanli-me/kratos/pkg/stat/prom"
 )
 
 var _ _mc

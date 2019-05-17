@@ -2,8 +2,8 @@
 
 [![Language](https://img.shields.io/badge/Language-Go-blue.svg)](https://golang.org/)
 [![Build Status](https://travis-ci.org/bilibili/kratos.svg?branch=master)](https://travis-ci.org/bilibili/kratos)
-[![GoDoc](https://godoc.org/github.com/bilibili/kratos?status.svg)](https://godoc.org/github.com/bilibili/kratos)
-[![Go Report Card](https://goreportcard.com/badge/github.com/bilibili/kratos)](https://goreportcard.com/report/github.com/bilibili/kratos)
+[![GoDoc](https://godoc.org/github.com/ryanli-me/kratos?status.svg)](https://godoc.org/github.com/ryanli-me/kratos)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ryanli-me/kratos)](https://goreportcard.com/report/github.com/ryanli-me/kratos)
 
 Kratos是[bilibili](https://www.bilibili.com)开源的一套Go微服务框架，包含大量微服务相关框架及工具：
 
@@ -13,7 +13,7 @@ Kratos是[bilibili](https://www.bilibili.com)开源的一套Go微服务框架，
     
 - [gRPC框架: Warden(wd)](doc/wiki-cn/warden.md)
 
-    基于官方gRPC封装，默认使用[discovery](https://github.com/bilibili/discovery)进行服务注册发现，及wrr和p2c(默认)负载均衡。
+    基于官方gRPC封装，默认使用[discovery](https://github.com/ryanli-me/discovery)进行服务注册发现，及wrr和p2c(默认)负载均衡。
     
 - 基础组件库
 
@@ -21,7 +21,7 @@ Kratos是[bilibili](https://www.bilibili.com)开源的一套Go微服务框架，
   
   * [log](doc/wiki-cn/logger.md)：基于[zap](https://github.com/uber-go/zap)的field方式实现的高性能log库，集成了我们提供的[log-agent敬请期待]()日志收集方案。
   
-  * [cache](doc/wiki-cn/cache.md)：集成memcache&redis的SDK，注意无redis-cluster实现，推荐使用代理模式[overlord](https://github.com/bilibili/overlord)。
+  * [cache](doc/wiki-cn/cache.md)：集成memcache&redis的SDK，注意无redis-cluster实现，推荐使用代理模式[overlord](https://github.com/ryanli-me/overlord)。
   
   * [database](doc/wiki-cn/database.md)：集成MySQL&HBase&TiDB的SDK，其中TiDB使用服务发现方案。
 
@@ -40,12 +40,12 @@ Go version>=1.12 and GO111MODULE=on
 ## Quick start
 
 ```shell
-go get -u github.com/bilibili/kratos/tool/kratos
+go get -u github.com/ryanli-me/kratos/tool/kratos
 cd $GOPATH/src
 kratos new kratos-demo
 ```
 
-`kratos new`会快速生成基于kratos库的脚手架代码，如生成[kratos-demo](https://github.com/bilibili/kratos-demo)
+`kratos new`会快速生成基于kratos库的脚手架代码，如生成[kratos-demo](https://github.com/ryanli-me/kratos-demo)
 
 ```shell
 cd kratos-demo/cmd

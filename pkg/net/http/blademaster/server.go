@@ -13,12 +13,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/conf/dsn"
-	"github.com/bilibili/kratos/pkg/log"
-	"github.com/bilibili/kratos/pkg/net/ip"
-	"github.com/bilibili/kratos/pkg/net/metadata"
-	"github.com/bilibili/kratos/pkg/stat"
-	xtime "github.com/bilibili/kratos/pkg/time"
+	"github.com/ryanli-me/kratos/pkg/conf/dsn"
+	"github.com/ryanli-me/kratos/pkg/log"
+	"github.com/ryanli-me/kratos/pkg/net/ip"
+	"github.com/ryanli-me/kratos/pkg/net/metadata"
+	"github.com/ryanli-me/kratos/pkg/stat"
+	xtime "github.com/ryanli-me/kratos/pkg/time"
 
 	"github.com/pkg/errors"
 )

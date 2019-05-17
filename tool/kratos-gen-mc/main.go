@@ -13,7 +13,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/bilibili/kratos/tool/pkg"
+	"github.com/ryanli-me/kratos/tool/pkg"
 )
 
 var (
