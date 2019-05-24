@@ -68,3 +68,7 @@ Kratos is under the MIT license. See the [LICENSE](./LICENSE) file for details.
 
 *Please report bugs, concerns, suggestions by issues, or join QQ-group 716486124 to discuss problems around source code.*
 
+
+## Known issues
+protoc-gen-bm doesn't support type mapping
+`--bm_out=explicit_http=true,Mgoogle/protobuf/any.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/empty.proto=github.com/gogo/protobuf/types`

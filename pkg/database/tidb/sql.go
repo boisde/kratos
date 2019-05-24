@@ -33,6 +33,12 @@ var (
 	ErrTxDone = sql.ErrTxDone
 )
 
+type Executer interface {
+	Query(c context.Context, query string, args ...interface{}) (rows *Rows, err error)
+	QueryRow(c context.Context, args ...interface{}) (row *Row)
+	Exec(c context.Context, args ...interface{}) (res sql.Result, err error)
+}
+
 // DB database.
 type DB struct {
 	conf         *Config

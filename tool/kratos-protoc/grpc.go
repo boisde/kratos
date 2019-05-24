@@ -8,7 +8,7 @@ import (
 
 const (
 	_getGRPCGen = "go get github.com/gogo/protobuf/protoc-gen-gogofast"
-	_grpcProtoc = "protoc --proto_path=%s --proto_path=%s --proto_path=%s --gogofast_out=plugins=grpc:."
+	_grpcProtoc = "protoc --proto_path=%s --proto_path=%s --proto_path=%s --gogofast_out=plugins=grpc,Mgoogle/protobuf/struct.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/any.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/empty.proto=github.com/gogo/protobuf/types:."
 )
 
 func installGRPCGen() error {
