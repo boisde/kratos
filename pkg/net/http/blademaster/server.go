@@ -163,7 +163,7 @@ func NewServer(conf *ServerConfig) *Engine {
 	// NOTE add prometheus monitor location
 	engine.addRoute("GET", "/metrics", monitor())
 	engine.addRoute("GET", "/metadata", engine.metadata())
-	startPerf()
+	// startPerf()
 	return engine
 }
 
