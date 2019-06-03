@@ -6,13 +6,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/container/group"
-	"github.com/bilibili/kratos/pkg/ecode"
-	"github.com/bilibili/kratos/pkg/log"
-	limit "github.com/bilibili/kratos/pkg/ratelimit"
-	"github.com/bilibili/kratos/pkg/stat/metric"
+	"github.com/ryanli-me/kratos/pkg/container/group"
+	"github.com/ryanli-me/kratos/pkg/ecode"
+	"github.com/ryanli-me/kratos/pkg/log"
+	limit "github.com/ryanli-me/kratos/pkg/ratelimit"
+	"github.com/ryanli-me/kratos/pkg/stat/metric"
 
-	cpustat "github.com/bilibili/kratos/pkg/stat/sys/cpu"
+	cpustat "github.com/ryanli-me/kratos/pkg/stat/sys/cpu"
 )
 
 var (

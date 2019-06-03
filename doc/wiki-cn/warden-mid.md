@@ -332,9 +332,9 @@ package grpc
 import (
 	pb "kratos-demo/api"
 	"kratos-demo/internal/service"
-	"github.com/bilibili/kratos/pkg/conf/paladin"
-	"github.com/bilibili/kratos/pkg/net/rpc/warden"
-	"github.com/bilibili/kratos/pkg/net/rpc/warden/ratelimiter"
+	"github.com/ryanli-me/kratos/pkg/conf/paladin"
+	"github.com/ryanli-me/kratos/pkg/net/rpc/warden"
+	"github.com/ryanli-me/kratos/pkg/net/rpc/warden/ratelimiter"
 )
 
 // New new a grpc server.
