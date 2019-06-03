@@ -14,12 +14,12 @@ import (
 	"github.com/ryanli-me/kratos/pkg/conf/flagvar"
 	"github.com/ryanli-me/kratos/pkg/ecode"
 	"github.com/ryanli-me/kratos/pkg/naming"
-	"github.com/ryanli-me/kratos/pkg/naming/discovery"
 	nmd "github.com/ryanli-me/kratos/pkg/net/metadata"
 	"github.com/ryanli-me/kratos/pkg/net/netutil/breaker"
 	"github.com/ryanli-me/kratos/pkg/net/rpc/warden/balancer/p2c"
 	"github.com/ryanli-me/kratos/pkg/net/rpc/warden/internal/status"
 	"github.com/ryanli-me/kratos/pkg/net/rpc/warden/resolver"
+	"github.com/ryanli-me/kratos/pkg/net/rpc/warden/resolver/direct"
 	"github.com/ryanli-me/kratos/pkg/net/trace"
 	xtime "github.com/ryanli-me/kratos/pkg/time"
 
@@ -49,6 +49,10 @@ func baseMetadata() metadata.MD {
 		gmd[nmd.Color] = []string{env.Color}
 	}
 	return gmd
+}
+
+func init() {
+	resolver.Register(direct.New())
 }
 
 // ClientConfig is rpc client conf.
@@ -156,7 +160,6 @@ func NewConn(target string, opt ...grpc.DialOption) (*grpc.ClientConn, error) {
 // NewClient returns a new blank Client instance with a default client interceptor.
 // opt can be used to add grpc dial options.
 func NewClient(conf *ClientConfig, opt ...grpc.DialOption) *Client {
-	resolver.Register(discovery.Builder())
 	c := new(Client)
 	if err := c.SetConfig(conf); err != nil {
 		panic(err)
@@ -170,7 +173,6 @@ func NewClient(conf *ClientConfig, opt ...grpc.DialOption) *Client {
 // DefaultClient returns a new default Client instance with a default client interceptor and default dialoption.
 // opt can be used to add grpc dial options.
 func DefaultClient() *Client {
-	resolver.Register(discovery.Builder())
 	_once.Do(func() {
 		_defaultClient = NewClient(nil)
 	})
@@ -226,7 +228,7 @@ func (c *Client) UseOpt(opt ...grpc.DialOption) *Client {
 
 // Dial creates a client connection to the given target.
 // Target format is scheme://authority/endpoint?query_arg=value
-// example: discovery://default/account.account.service?cluster=shfy01&cluster=shfy02
+// example: direct://default/192.168.1.1:9000,192.168.1.2:9001
 func (c *Client) Dial(ctx context.Context, target string, opt ...grpc.DialOption) (conn *grpc.ClientConn, err error) {
 	if !c.conf.NonBlock {
 		c.opt = append(c.opt, grpc.WithBlock())

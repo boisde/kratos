@@ -135,6 +135,7 @@ func (s *Server) handle() grpc.UnaryServerInterceptor {
 
 func init() {
 	addFlag(flag.CommandLine)
+
 }
 
 func addFlag(fs *flag.FlagSet) {

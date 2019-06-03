@@ -11,6 +11,7 @@ import (
 	"github.com/ryanli-me/kratos/pkg/net/rpc/warden"
 	pb "github.com/ryanli-me/kratos/pkg/net/rpc/warden/internal/proto/testproto"
 	"github.com/ryanli-me/kratos/pkg/net/rpc/warden/resolver"
+	"github.com/ryanli-me/kratos/pkg/net/rpc/warden/resolver/direct"
 	xtime "github.com/ryanli-me/kratos/pkg/time"
 )
 
@@ -39,7 +40,7 @@ func createServer(name, listen string) *warden.Server {
 }
 
 func TestMain(m *testing.M) {
-	resolver.Register(New())
+	resolver.Register(direct.New())
 	ctx := context.TODO()
 	s1 := createServer("server1", "127.0.0.1:18081")
 	s2 := createServer("server2", "127.0.0.1:18082")

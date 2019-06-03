@@ -15,7 +15,7 @@ import (
 	"google.golang.org/grpc/status"
 
 	"github.com/ryanli-me/kratos/pkg/ecode"
-	"github.com/ryanli-me/kratos/pkg/ecode/pb"
+	"github.com/ryanli-me/kratos/pkg/net/rpc/warden/internal/pb"
 )
 
 func TestCodeConvert(t *testing.T) {
