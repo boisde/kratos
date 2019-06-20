@@ -316,9 +316,14 @@ func (engine *Engine) Use(middleware ...Handler) IRoutes {
 	return engine
 }
 
-// Ping is used to set the general HTTP ping handler.
-func (engine *Engine) Ping(handler HandlerFunc) {
-	engine.GET("/ping", handler)
+// Live is used to set the general HTTP health live handler.
+func (engine *Engine) Live(handler HandlerFunc) {
+	engine.GET("/health/live", handler)
+}
+
+// Ready is used to set the general HTTP health ready handler.
+func (engine *Engine) Ready(handler HandlerFunc) {
+	engine.GET("/health/ready", handler)
 }
 
 // Register is used to export metadata to discovery.

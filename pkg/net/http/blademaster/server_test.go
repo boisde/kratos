@@ -38,7 +38,11 @@ func setupHandler(engine *Engine) {
 	// set the global timeout is 2 second
 	engine.conf.Timeout = xtime.Duration(time.Second * 2)
 
-	engine.Ping(func(ctx *Context) {
+	engine.Ready(func(ctx *Context) {
+		ctx.AbortWithStatus(200)
+	})
+
+	engine.Live(func(ctx *Context) {
 		ctx.AbortWithStatus(200)
 	})
 

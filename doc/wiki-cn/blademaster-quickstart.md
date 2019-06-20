@@ -48,7 +48,8 @@ if err := engine.Start(); err != nil {
 
 ```go
 func initRouter(e *bm.Engine) {
-	e.Ping(ping) // engine自带的"/ping"接口，用于负载均衡检测服务健康状态
+    e.Live(ping) // engine自带的"/health/live" 接口，用于负载均衡检测服务健康状态
+    e.Ready(ping) // engine自带的"/health/ready" 接口，用于负载均衡检测服务健康状态
 	g := e.Group("/kratos-demo") // e.Group 创建一组 "/kratos-demo" 起始的路由组
 	{
 		g.GET("/start", howToStart) // g.GET 创建一个 "kratos-demo/start" 的路由，默认处理Handler为howToStart方法
@@ -62,9 +63,9 @@ bm的handler方法，结构如下：
 func howToStart(c *bm.Context) // handler方法默认传入bm的Context对象
 ```
 
-### Ping
+### Ready/Live
 
-engine自带Ping方法，用于设置`/ping`路由的handler，该路由统一提供于负载均衡服务做健康检测。服务是否健康，可自定义`ping handler`进行逻辑判断，如检测DB是否正常等。
+engine自带Ready/Live方法，用于设置`/health/{ready,live}`路由的handler，该路由统一提供于负载均衡服务做健康检测。服务是否健康，可自定义`ping handler`进行逻辑判断，如检测DB是否正常等。
 
 ```go
 func ping(c *bm.Context) {
