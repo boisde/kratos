@@ -110,7 +110,7 @@ func remoteIP(req *http.Request) (remote string) {
 	if remote = req.Header.Get("X-Real-IP"); remote != "" {
 		return
 	}
-	remote = req.RemoteAddr[:strings.Index(req.RemoteAddr, ":")]
+	remote = req.RemoteAddr[:strings.LastIndex(req.RemoteAddr, ":")]
 	return
 }
 
